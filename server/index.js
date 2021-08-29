@@ -16,7 +16,7 @@ const pool = require('./db.js')
 const jwt = require("jsonwebtoken");
 
 app.get('*', (req, res) => {                       
-  res.sendFile(path.resolve(__dirname, "../client/build", 'index.html'));                               
+  res.sendFile(path.resolve(__dirname, "../client/build"));                               
 });
 
 
