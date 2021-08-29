@@ -15,7 +15,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const pool = require('./db.js')
 const jwt = require("jsonwebtoken");
 
-this.app.use(
+app.use(
       express.static(path.join(__dirname, "../client/build"))
     );
 
