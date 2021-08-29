@@ -15,7 +15,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 const pool = require('./db.js')
 const jwt = require("jsonwebtoken");
 
-app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
+app.use(express.static(path.resolve(__dirname, '../client/build')));
 
 const balena = require("./balena");
 app.use('/device', balena);
