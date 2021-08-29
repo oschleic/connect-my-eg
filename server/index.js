@@ -77,7 +77,7 @@ app.post('/login', urlencodedParser, async function (req, res) {
 })
 
 app.get('*', (req, res) => {                      
-  res.sendFile(path.resolve(__dirname,  "../client/build"));                               
+  res.sendFile(path.resolve(__dirname,  "../client/build", 'index.html'));                               
 });
 
 app.listen(port, () => {
