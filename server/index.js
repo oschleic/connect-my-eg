@@ -16,9 +16,7 @@ const pool = require('./db.js')
 const jwt = require("jsonwebtoken");
 
 
-app.get('*', (req, res) => {                       
-  res.sendFile(path.resolve(__dirname,  "../client/build", 'index.html'));                               
-});
+
 
 
 
@@ -78,6 +76,9 @@ app.post('/login', urlencodedParser, async function (req, res) {
     }
 })
 
+app.get('*', (req, res) => {                       
+  res.sendFile(path.resolve(__dirname,  "../client/build", 'index.html'));                               
+});
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
