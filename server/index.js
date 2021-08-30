@@ -4,7 +4,7 @@ const app = express()
 const dev = require('./devConfig.json')
 
 //const path = require('path');
-const root = require('path').join(__dirname, 'client', 'build')
+const root = require('path').join(__dirname, '../client/build')
 app.use(express.static(root));
 app.get("*", (req, res) => {
     res.sendFile('index.html', { root });
