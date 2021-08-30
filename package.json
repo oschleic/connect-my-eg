@@ -2,7 +2,7 @@
   "name": "connect-my-eg",
   "version": "3.0.0",
   "description": "Connect my evergreen",
-  "homepage": ".",
+  "homepage": "https://evergreen-miner.herokuapp.com/",
   "engines": {
     "node": "10.x"
   },

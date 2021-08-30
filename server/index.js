@@ -2,7 +2,14 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const dev = require('./devConfig.json')
-const path = require('path');
+
+//const path = require('path');
+const root = require('path').join(__dirname, 'client', 'build')
+app.use(express.static(root));
+app.get("*", (req, res) => {
+    res.sendFile('index.html', { root });
+})
+
 const bcrypt = require('bcrypt');
 const port =  process.env.PORT || dev['backend-port']
 
@@ -77,7 +84,7 @@ app.post('/login', urlencodedParser, async function (req, res) {
 })
 
 //app.use(express.static(path.resolve(__dirname, '../client/build')));
-app.use('*', express.static(path.join(__dirname, 'public')))
+
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
