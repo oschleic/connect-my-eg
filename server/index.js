@@ -73,7 +73,13 @@ app.post('/login', urlencodedParser, async function (req, res) {
               );
             res.status(200).json({token});
         }
-        res.send("failed");
+        else if(await bcrypt.compare(password, ins.rows[0]['password'])){
+          res.json({success: false, error: "Incorrect password!"})
+        }
+        else{
+          res.json({success: false, error: "Account not found!"})
+        }
+
         
     } catch(error){
         res.status(500);
