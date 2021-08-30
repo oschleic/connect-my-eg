@@ -76,8 +76,8 @@ app.post('/login', urlencodedParser, async function (req, res) {
     }
 })
 
-app.use(express.static(path.resolve(__dirname, '../client/build')));
-
+//app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use('*', express.static(path.join(__dirname, 'public')))
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
