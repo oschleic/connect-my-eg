@@ -49,11 +49,8 @@ app.post('/signup', urlencodedParser, async function (req, res) {
             res.json({success: false, error: "There is already an account associated with this email"})
         }
         else{
-			console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
-            console.log(error);
-            console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
             res.status(500);
-            res.json({success: false, error: "There is already an account associated with this email"})
+            res.json({success: false, error: ""})
         }
     }
 })
